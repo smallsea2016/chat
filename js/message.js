@@ -97,7 +97,7 @@ function loaded() {
     });
 }
 setTimeout(function(){
-   myScroll.scrollToElement('#ul1>li:last-child',200);
+   myScroll.scrollToElement('#messageID>li:last-child',200);
 },500);
 
 //初始化绑定iScroll控件 
@@ -157,6 +157,7 @@ function sendMsg(){
     //编译表情
     var str = '';
         str = '<li class="pr">' +
+                '<time class="dialog_time">2017-05-02 10:22:08</time>'+
                 '<div class="dialog_name_right">' +
                   '<div class="dialog_name_round">' +
                     '<div class=""><img class="user_photo" src="images/user.jpg" alt=""></div>' +
@@ -181,7 +182,7 @@ function sendMsg(){
     //发送的时候滚动到底
     setTimeout(function(){
       myScroll.refresh();
-      myScroll.scrollToElement('#ul1>li:last-child',200);
+      myScroll.scrollToElement('#messageID>li:last-child',200);
     },500)    
  };
 

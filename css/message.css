@@ -226,7 +226,7 @@ i[class*="_ico"] {
    font-size: 13px; 
 }
 .map_area {width: 260px;height: 200px} 
-.dialog_time {position: absolute;left: 0;right: 0;text-align: center;top:-23px;color: #808080;font-size: 10px}
+.dialog_time {position: absolute;left: 0;right: 0;text-align: center;top:16px;color: #808080;font-size: 10px}
 .dialog_content_right .dialog_time {margin-left: 18px}
 .dialog_content_left .dialog_time {margin-left: -26px}
 
