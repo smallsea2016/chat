@@ -96,7 +96,6 @@ function loaded() {
         }
     });
 }
-// setTimeout(scrollToBottom,500); //ajax请求完成后调用scrollToBottom()定位到最底部的信息
 setTimeout(function(){
    myScroll.scrollToElement('#ul1>li:last-child',200);
 },500);
@@ -111,27 +110,7 @@ document.addEventListener('touchmove', preventEvent, false);
 document.addEventListener('DOMContentLoaded', loaded, false); 
 
 /*========== iscroll无限加载 END ==========*/
-//滚动到底
-var clickTime = 0;
-var $winH = $(window).height();
-function scrollToBottom(){
-  clickTime++;
-  console.log(clickTime);
-  var $h;
-  if($winH - $('.abs_top').height() - $('.dialog_bottom').height() > $("#ul1").height()){
-      return;
-  }else{
-    $h = -$("#ul1").height() + ($winH - 100);
-    if(clickTime > 1){
-      console.log('clickTime > 1');
-      $h = -$("#ul1").height() + ($winH - $('.abs_top').height() - $('.dialog_bottom').height() -$('#pullUp').height());
-    }
-    $('#scroller').css({
-        'transform':'translate(0,'+$h+'px)',
-        'webkitTransform':'translate(0,'+$h+'px)',
-    })
-  }
-}
+
 //截取"#"字符以后的字符串
 if(window.location.href.indexOf("#") > 0){
     var href = window.location.href;
@@ -172,6 +151,9 @@ function defaultTextarea(){
 //点击发送
 function sendMsg(){
     console.log('点击发送');
+    if ($.trim($textarea.val()) == '') {
+      return
+    };
     //编译表情
     var str = '';
         str = '<li class="pr">' +
@@ -197,9 +179,10 @@ function sendMsg(){
     $('.dialog_list .ui_list').append(str);
     defaultTextarea();
     //发送的时候滚动到底
-    myScroll.refresh();
-    myScroll.scrollToElement('#ul1>li:last-child',200);  //滚动到某个元素
-    // scrollToBottom();
+    setTimeout(function(){
+      myScroll.refresh();
+      myScroll.scrollToElement('#ul1>li:last-child',200);
+    },500)    
  };
 
 /*显示隐藏图片和电话图标*/
