@@ -1,0 +1,281 @@
+@import url(reset.css);
+body {overflow: hidden;background-color: #f2f2f2;}
+i[class*="_ico"] {
+    display: inline-block;
+    vertical-align: middle;
+}
+.pr {
+    position: relative;
+}
+#wrap_main, .wrap_inner {height: 100%;overflow: hidden;}
+.wrap {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.wrap_inner {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+.flexbox {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.flexItem {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+.abs_top,
+.abs_bottom {position:absolute;width:100%;left:0;z-index:99}
+.abs_top {top:0;}
+.abs_bottom {bottom:0;}
+.bg_gray {background-color: #efefef}
+.dialog_list {margin-top:0;}
+#mask {z-index: 99}
+.c_red {
+    color: #c4261d;
+}
+.textarea_wrap {padding-left: 15px;padding-right: 15px}
+.send_msg_wrap {position: relative;width: 50px}
+.send_msg {display: block;padding-left: 10px;line-height:35px;color:#dc0c00;text-align: center;font-size: 16px}
+.plus_action {color:#dc0c00;font-size: 22px;margin-right: 10px}
+
+/*表情*/
+.face {padding-top: 5px;}
+.face>li {overflow: hidden;}
+.face>li a {float: left;display: inline;width:14.28571%;text-align: center;padding-bottom:5px}
+.face>li img {width: 22px;height: 22px;padding-bottom:5px;}
+
+/*swiper*/
+#swiper-container {margin-top: 0;margin-bottom: 0;background-color: #fff}
+.swiper-container {
+    position: relative;
+    overflow: hidden;
+}
+.swiper-pagination-circle {position: relative;top: -5px;text-align: center;}
+.swiper-pagination-circle>span{display: inline-block;width:8px;height:8px;margin-right:8px;
+    background-color: #ccc;border-radius: 100%;background-clip: padding-box;
+}
+.swiper-pagination-circle>span.swiper-pagination-bullet-active,
+.swiper-pagination-square>span.swiper-pagination-bullet-active {background-color: #999}
+
+
+.boxModal {
+    display: box;
+    display: -webkit-box;
+    display: -moz-box;
+}
+
+#wrap_inner_content {position: absolute;left: 0;right: 0;top:0;bottom:90px;
+  /*overflow-y: auto;*/overflow: hidden ;
+}
+.user_bg {height: 80px;}
+.user_bg:before {content: '';position: absolute;height: 100%;width: 100%;left: 0;top:0;
+  background-image: -webkit-linear-gradient(rgba(0,0,0,0.5) 69%, rgba(0,0,0,0));
+  background-image: linear-gradient(rgba(0,0,0,0.5) 69%, rgba(0,0,0,0));
+}
+
+.swiper-slide {height: auto;}
+#dialog_type_group {padding-right: 20px;}
+.user_photo_wrap, .user_photo {
+    border-radius: 100%;
+    background-clip: padding-box;
+}
+.dialog_type {float: right;}
+.dialog_list>ul>li{
+    padding:10px 0;
+    border: none;
+    min-height: 45px;
+}
+.dialog_list>ul>li:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.dialog_name_left{
+    position: absolute;
+    border-radius: 100%;
+    border: solid 5px #F1F1F1;
+    z-index: 10;
+}
+.dialog_name_round{
+    display: table-cell;
+    border-radius: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+.dialog_name_round,
+.dialog_name_round .user_photo { width: 40px;
+    height: 40px;
+}
+.dialog_content_left,
+.dialog_content_right {position: relative;min-height: 20px;padding: 5px;min-width: 50px;border-radius: 10px;
+    background-clip: padding-box;word-break:break-all;}
+.dialog_content_left{
+    display: inline-block;
+    background: white;
+    margin-left: 58px;
+    margin-right: 30px;
+}
+.dialog_content_left:after,
+.dialog_content_right:after {
+    content: '';position: absolute;
+    /*width:0;height:0;border:8px solid;*/
+}
+.dialog_content_left:after {
+    /*
+    border-color: #fff #fff transparent transparent;
+    -webkit-transform: rotate(15deg);transform: rotate(15deg);*/left: -6px;top:3px;
+    width: 8px;height: 10px;background: url(../images/icon/dialog_arrow1.png) no-repeat;
+    background-size: contain
+}
+.dialog_content_right:after {
+   /* right: -10px;top:5px;border:10px solid;
+    border-color: #bae3f9 transparent transparent transparent;
+    -webkit-transform: rotate(-15deg);transform: rotate(-15deg);*/
+    right: -6px;top:3px;
+    width: 8px;height: 10px;background: url(../images/icon/dialog_arrow2.png) no-repeat;
+    background-size: contain
+}
+.dialog_name_right{
+    position: absolute;
+    right: 0;
+    border-radius: 100%;
+    border: solid 5px #F1F1F1;
+    z-index: 10;
+}
+.dialog_name_right .dialog_name_round{
+    background: #00c193;
+}
+.dialog_content_right{
+    float:right;display: inline;
+    background: #bae3f9;
+    margin-right: 58px;
+    margin-left: 40px;
+}
+.dialog_bottom{
+    background: #fff;
+}
+.dialog_bottom>div{
+    margin-top: 10px;margin-bottom: 10px;
+}
+.dialog_input{
+    width: 100%;border-radius: 5px;
+    box-sizing: border-box;
+    padding-left: 5px;padding-right: 5px;
+    margin: 0 auto;
+    border: 0;
+    height: 35px;
+    min-height: 35px;
+    background: #f2f2f2;
+    /*border: 1px solid #e5e5e5*/
+}
+.dialog_icon{
+    width: 22px;
+    height: 22px;
+}
+.dialog_tel_icon{
+    background: url(../images/icon/icon-tel.png) no-repeat center;
+    background-size: contain;
+}
+.dialog_face_icon{
+    background: url(../images/icon/face.png) no-repeat center;
+    background-size: contain;
+}
+.dialog_image_icon{
+    background: url(../images/icon/image.png) no-repeat center;
+    background-size: contain;
+}
+.dialog_folder_icon{
+    background: url(../images/icon/folder.png) no-repeat center;
+    background-size: contain;
+}
+.dialog_add_icon{
+    background: url(../images/icon/add.png) no-repeat center;
+    background-size: contain;
+}
+.dialog_content_left,
+.dialog_content_right {
+    margin-top: 30px;
+    position: relative;
+}
+.dialog_name{
+    position: absolute;
+    top: -24px;
+    font-size: 13px;
+    white-space: nowrap;
+    color: #4c4c4c
+}
+.dialog_content_left .dialog_name {left: 0;}
+.dialog_content_right .dialog_name {right: 0;}
+.dialog_nameR{
+   position: absolute;
+   top: -20px;
+   right: 20px;
+   font-size: 13px; 
+}
+.map_area {width: 260px;height: 200px} 
+.dialog_time {position: absolute;left: 0;right: 0;text-align: center;top:-23px;color: #808080;font-size: 10px}
+.dialog_content_right .dialog_time {margin-left: 18px}
+.dialog_content_left .dialog_time {margin-left: -26px}
+
+/**
+  * 下拉样式 Pull down styles
+*/
+
+#pullDown, #pullUp {display: none;
+    text-align: center;
+    height:40px;
+    line-height:40px;
+    padding:5px 10px;
+    color:#888;
+}
+#pullDown .pullDownIcon, #pullUp .pullUpIcon  {
+    display:inline-block;vertical-align: middle;
+    width:40px; height:40px;
+    background:url(../images/icon/pull-icon@2x.png) 0 0 no-repeat;
+    background-size:40px 80px;
+    -webkit-transition-property:-webkit-transform;
+    -webkit-transition-duration:250ms;  
+}
+#pullDown .pullDownIcon {
+    -webkit-transform:rotate(0deg) translateZ(0);
+}
+#pullUp .pullUpIcon  {
+    -webkit-transform:rotate(-180deg) translateZ(0);
+}
+
+#pullDown.flip .pullDownIcon {
+    -webkit-transform:rotate(-180deg) translateZ(0);
+}
+
+#pullUp.flip .pullUpIcon {
+    -webkit-transform:rotate(0deg) translateZ(0);
+}
+
+#pullDown.loading .pullDownIcon, #pullUp.loading .pullUpIcon {
+    background-position:0 100%;
+    -webkit-transform:rotate(0deg) translateZ(0);
+    -webkit-transition-duration:0ms;
+
+    -webkit-animation-name:loading;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-timing-function:linear;
+}
+
+@-webkit-keyframes loading {
+    from { -webkit-transform:rotate(0deg) translateZ(0); }
+    to { -webkit-transform:rotate(360deg) translateZ(0); }
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>旅游问答</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="Pragma" CONTENT="no-cache">
+    <meta name="keywords" content=""/>
+    <meta name="description" content="" />
+    <!-- <link rel="stylesheet" href="css/main.css" /> -->
+    <link rel="stylesheet" href="css/message.css">
+</head>
+<body>
+    <div id="wrap_main" class="wrap">
+        <div id="wrap_inner_content">
+            <section class="dialog_list" id="scroller">
+                <div id="pullDown">
+                    <span class="pullDownIcon"></span><span class="pullDownLabel">下拉刷新...</span>
+                </div>
+                <ul class="ui_list" id="ul1">
+                	<li class="pr">
+                		<div class="dialog_name_right">
+                			<div class="dialog_name_round">
+                        <div class=""><img class="user_photo" src="images/user.jpg" alt=""></div>
+                			</div>
+                		</div>
+                		<div class="dialog_content_right">
+                      <span class="dialog_name">客服</span>
+                      <time class="dialog_time">2017-05-02 10:22:08</time>
+                			<span class="c_red">#微信企业号项目#</span>本周五安排项目会议，小川安排<span class="c_red">@小川 @小黑 @信息技术部</span>
+                		</div>
+                		<div class="clearfix"></div>
+                	</li>
+        					<li class="pr">
+        						<div class="dialog_name_left">
+        							<div class="dialog_name_round">
+        								<div class=""><img class="user_photo" src="images/user.jpg" alt=""></div>
+        							</div>
+        						</div>
+        						<div class="dialog_content_left">
+                      <span class="dialog_name">李红</span>
+                      <time class="dialog_time">2017-05-02 10:22:08</time>
+                      <span class="c_red">#微信企业号项目#</span>本周五安排项目会议，小川安排<span class="c_red">@小川 @小黑 @信息技术部</span>
+                    </div>
+        					</li>
+        					<li class="pr">
+                    <div class="dialog_name_left">
+                      <div class="dialog_name_round">
+                        <div class=""><img class="user_photo" src="images/user.jpg" alt=""></div>
+                      </div>
+                    </div>
+                    <div class="dialog_content_left">
+                      <span class="dialog_name">李红</span>
+                      <time class="dialog_time">2017-05-02 10:22:08</time>
+                      <div id="allmap" class="map_area"></div>
+                    </div>
+                  </li>
+        					<li class="pr">
+                    <div class="dialog_name_left">
+                      <div class="dialog_name_round">
+                        <div class=""><img class="user_photo" src="images/user.jpg" alt=""></div>
+                      </div>
+                    </div>
+                    <div class="dialog_content_left">
+                      <span class="dialog_name">李红</span>
+                      <time class="dialog_time">2017-05-02 10:22:08</time>
+                      <img src="images/team-top.jpg" alt="">
+                    </div>
+                  </li>                  
+               </ul>
+                <div id="pullUp">
+                  <span class="pullUpIcon"></span><span class="pullUpLabel">上拉加载更多...</span>
+                </div>
+            </section>
+            <!-- <p class="pt10 tc"><a href="javascript:;" class="c999">加载更多...</a></p>    -->
+            <!--高度-->
+            <div class="bottom_height" id="bottom_height"></div>
+        </div>
+        <section class="dialog_bottom abs_bottom" style="z-index:100;">
+            <div class="textarea_wrap flexbox">
+                  <a href="javascript:toggle();" class="plus_action">+</a>
+                 <div class="flexItem"><textarea class="dialog_input" id="dialog_input"></textarea></div>
+                 <a class="send_msg" href="javascript:sendMsg();">发送</a>
+            </div>
+            <div class="flexbox f15" id="action_icon_group" style="display: none">
+                <!-- <a class="tc flexItem db" href="tel:13800138000"><i class="dialog_icon dialog_tel_icon"></i></a> -->
+                <a class="tc flexItem db" href="#"><i class="dialog_icon dialog_image_icon"></i></a>
+            </div>
+        </section>
+    </div>
+
+<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+<!--iscroll滑动-->
+<script type="text/javascript" src="js/iscroll.js"></script>
+<script type="text/javascript" src="js/message.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=IM6qCYfAEa4xFVbQvk9nbMp7"></script>
+<script type="text/javascript">
+    // 百度地图
+    var map = new BMap.Map("allmap");
+    var point = new BMap.Point(116.404, 39.915);
+    map.centerAndZoom(point, 15);
+    
+    var marker = new BMap.Marker(new BMap.Point(116.404, 39.915)); // 创建点
+    marker.addEventListener("click",attribute);
+    map.addOverlay(marker);    //增加点
+    
+    function attribute(){
+      var p = marker.getPosition();  //获取marker的位置
+      alert("marker的位置是" + p.lng + "," + p.lat);    
+    }
+  </script>
+</body>
+</html>
